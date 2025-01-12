@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
     'blog',
 ]
 
@@ -75,6 +76,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
+# Add this line to configure Summernote to use Bootstrap 5
+SUMMERNOTE_THEME = 'bs5'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
