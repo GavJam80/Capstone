@@ -95,8 +95,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
-# Add this line to configure Summernote to use Bootstrap 5
-SUMMERNOTE_THEME = 'bs5'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -153,7 +152,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
