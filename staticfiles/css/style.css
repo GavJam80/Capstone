@@ -10,7 +10,7 @@ body {
 }
 
 .red-o {
-    color: #E84610;
+    color: #b81818;
 }
 
 .thin {
@@ -43,7 +43,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #b81818;
 }
 
 .scale {
@@ -67,7 +67,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #b81818;
     color: white;
     position: relative;
 }
@@ -84,7 +84,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #b93158;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -93,12 +93,12 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #b81818;
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #000000;
 }
 
 .post-title {
@@ -113,18 +113,18 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #000000;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #b81818;
 }
 
 .link {
-    color: #23BBBB;
+    color: #b81818;
     text-decoration: none;
 }
 
@@ -135,14 +135,14 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #b81818;
     border: none;
     background: transparent;
 }
 
 .btn-delete {
     color: #fff;
-    background: #E84610;
+    background: #b81818;
 }
 
 .btn-like:hover,
