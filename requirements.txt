@@ -3,7 +3,7 @@ cloudinary==1.42.1
 crispy-bootstrap5==2024.10
 dj-database-url==2.3.0
 dj3-cloudinary-storage==0.0.6
-Django==5.1.4
+Django==5.1.5
 django-allauth==65.3.1
 django-crispy-forms==2.3
 django-summernote==0.8.20.0
