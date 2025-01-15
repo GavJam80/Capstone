@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About, CollaborateRequest
+from .models import About, CollaborateRequest, AboutPage
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -7,14 +7,12 @@ from django_summernote.admin import SummernoteModelAdmin
 class AboutAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
-# Note: admin.ModelAdmin is the standard way of registering
-#       our model with the admin panel. We do it differently
-#       above because we are supplying Summernote fields.
-#       If you want to customise the admin panel view in your
-#       own projects, then inherit from admin.ModelAdmin like
-#       we do below.
-
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
-
     list_display = ('message', 'read',)
+
+@admin.register(AboutPage)
+class AboutPageAdmin(SummernoteModelAdmin):
+    list_display = ('user', 'content')
+    search_fields = ('user__username', 'content')
+    summernote_fields = ('content',)

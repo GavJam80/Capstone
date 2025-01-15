@@ -53,6 +53,14 @@
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == create_about_page_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'create_about_page' %}">Create About Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == view_about_page_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'view_about_page' username=request.user.username %}">View My About Page</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"

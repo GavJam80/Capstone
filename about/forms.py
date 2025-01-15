@@ -1,6 +1,6 @@
 from django import forms
-from .models import CollaborateRequest
-
+from .models import CollaborateRequest, AboutPage
+from django_summernote.widgets import SummernoteWidget
 
 class CollaborateForm(forms.ModelForm):
     """
@@ -12,3 +12,12 @@ class CollaborateForm(forms.ModelForm):
         """
         model = CollaborateRequest
         fields = ('name', 'email', 'message')
+
+
+class AboutPageForm(forms.ModelForm):
+    class Meta:
+        model = AboutPage
+        fields = ['content']
+        widgets = {
+            'content': SummernoteWidget(),
+        }
