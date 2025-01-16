@@ -16,11 +16,13 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/kick.webp' %}"
-                                alt="placeholder image">
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dkn7t5brn/image/upload/t_postholder/v1736866411/karate-silhouette-800px_qkf2uf.png"
+                                    alt="silhouette kicking">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                                alt="{{ post.title }}">
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dkn7t5brn/image/upload/t_postholder/v1736866411/karate-silhouette-800px_qkf2uf.png"
+                                    alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
@@ -51,14 +53,12 @@
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li>
-                <a href="?page={{ page_obj.previous_page_number }}"
-                  class="page-link">&laquo; PREV</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
             </li>
             {% endif %}
             {% if page_obj.has_next %}
             <li>
-                <a href="?page={{ page_obj.next_page_number }}"
-                  class="page-link">NEXT &raquo;</a>
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
             </li>
             {% endif %}
         </ul>
