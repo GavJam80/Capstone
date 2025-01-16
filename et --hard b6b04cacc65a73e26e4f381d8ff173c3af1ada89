@@ -1,0 +1,204 @@
+[33mcommit b6b04cacc65a73e26e4f381d8ff173c3af1ada89[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Wed Jan 15 17:21:59 2025 +0000
+
+    updated Django to 5.1.5 as per the vunerability warning with version 5.1.4
+
+[33mcommit 8ff7a77da6d143ee65981d4c8c0e39cbe4c3440b[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Wed Jan 15 17:18:09 2025 +0000
+
+    profile pages for members with edit functions
+
+[33mcommit 819bdd46b3315a82e22e9a8a6ee45683d75da433[m[33m ([m[1;32mtest[m[33m)[m
+Merge: 867024e 61c8fe0
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Tue Jan 14 15:23:01 2025 +0000
+
+    Merge branch 'testing'
+
+[33mcommit 61c8fe0d457234aa9cd65fbda36564df79f55930[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Tue Jan 14 15:21:03 2025 +0000
+
+    styling and images
+
+[33mcommit 867024ef7e697ec89a436c704b77accf0d16d48f[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Tue Jan 14 13:24:21 2025 +0000
+
+    styled register page
+
+[33mcommit 660119aeafa71648e4460424d32c54e54b7845a0[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Tue Jan 14 10:00:07 2025 +0000
+
+    fixed css error about us image
+
+[33mcommit 92545b5e48f1d1b8fd4ac058910349ee688d0a91[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 17:09:44 2025 +0000
+
+    database error corrected with flush
+
+[33mcommit 8c382e4c71bcbcdee290449d7db9f854f9d4eb13[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 15:17:52 2025 +0000
+
+    database issues
+
+[33mcommit 03007bf44e9e1521f8ca698d8efd272ce53e1bd5[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 14:31:56 2025 +0000
+
+    enable serving of image files
+
+[33mcommit da4531b3ba94907343862951f48e7891d7360ab8[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 14:11:55 2025 +0000
+
+    edit delete
+
+[33mcommit 401f28492bdb408d47f8794bfaa11f19010ef8bd[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 12:23:40 2025 +0000
+
+    Comment on posts from standard site
+
+[33mcommit ed774bbe8f0f7f54a690da84469901a6dc4be335[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 11:45:59 2025 +0000
+
+    added authentication
+
+[33mcommit fa7a4ed9eb4cd4e758c540d84e33ea01404dd7b7[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 11:44:31 2025 +0000
+
+    added authentication
+
+[33mcommit 678b18848baad0c9d3c18b6d6f82727f4cf62462[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 10:53:23 2025 +0000
+
+    Add About app
+
+[33mcommit 307afad86d1f31746eb654e024ca8c4a012e76dd[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 10:13:20 2025 +0000
+
+    added post_detail view
+
+[33mcommit 7af151d739e2fd920a82df7f1cd11ffe0fb14356[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 09:58:06 2025 +0000
+
+    error in runtime formatting fixed
+
+[33mcommit 6ac302a52482a86dfc80b4a1bb116c087c2ee668[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 09:55:11 2025 +0000
+
+    enable serving of static files
+
+[33mcommit 0131c0a3d418f0a5111280cfc57fb7c56295b6ac[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 09:50:04 2025 +0000
+
+    added PREVIOUS BUTTON
+
+[33mcommit 2220f6a20675139882d4ca79737cef4905515bb8[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Mon Jan 13 09:38:28 2025 +0000
+
+    added css stylesheet
+
+[33mcommit b2e89c177970bc01dc20e2940ad00d6601703730[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 16:57:50 2025 +0000
+
+    summernote wysiwyg not working
+
+[33mcommit 852b25bf4feda6f6850155cd1b401ab96ebf6600[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 15:48:52 2025 +0000
+
+    drafts wont show in blog
+
+[33mcommit f4d16376acc55ecae1419e51e43ab34916343c6b[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 15:46:22 2025 +0000
+
+    built home page
+
+[33mcommit c30b5f10eecd11e72363c18ca9aa0803705b40f5[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 15:25:49 2025 +0000
+
+    added comments model
+
+[33mcommit 4c456750f092d9ea7f9abf6f3aae9a555838cf7e[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 15:08:00 2025 +0000
+
+    added excerpt, updated on
+
+[33mcommit ac8cb9a1a55bfd3e1eb1cc8a5ae188cb63645153[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 14:48:06 2025 +0000
+
+    added posts model
+
+[33mcommit b97921acf950e1a5d744fbc11b75109e4616213f[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 14:33:11 2025 +0000
+
+    added secret key
+
+[33mcommit a4f0e100947d2549ec297aee9aabc51d19b6b789[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 14:26:02 2025 +0000
+
+    added superuser
+
+[33mcommit 14be480b26240d35edf1d2977ed149e97dba1be6[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 14:17:37 2025 +0000
+
+    heroku issues
+
+[33mcommit a22293aaeb70d1813ab26cf548408b95c39b258d[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 14:14:45 2025 +0000
+
+    heroku issues
+
+[33mcommit f0fc541657d3b57121649d42872c54829f62d9c6[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 14:03:53 2025 +0000
+
+    heroku issues
+
+[33mcommit a455acc0132a593c2b40c8417075daa1b6ef814f[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 13:58:08 2025 +0000
+
+    Changed setting preventing heroku deployment
+
+[33mcommit 7344b1b42aee52c44de09f583a3f9c2f6ea2f9b3[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 13:55:31 2025 +0000
+
+    Added heroku to allowed hosts
+
+[33mcommit 7c3ceeb554b8a81e898368e567d647ea1fc328d4[m
+Author: Gavin Jameson <m2pyeoeh@students.codeinstitute.net>
+Date:   Sun Jan 12 13:50:48 2025 +0000
+
+    Installed Django and basic setup
+
+[33mcommit 0f45e1f3db344ea98f446c6bbacf0ea07e58835f[m
+Author: GavJam80 <GavJam80@outlook.com>
+Date:   Thu Jan 9 09:03:43 2025 +0000
+
+    Update README.md

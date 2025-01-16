@@ -2,9 +2,9 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
-# Create your models here.
 
 
+# Site About me page, appears as my dojo in navbar
 class About(models.Model):
     title = models.CharField(max_length=200)
     profile_image = CloudinaryField('image', default='placeholder')
@@ -25,6 +25,7 @@ class CollaborateRequest(models.Model):
         return f"Collaboration request from {self.name}"
     
 
+# User About me page, appears as my dojo in navbar
 class AboutPage(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     content = models.TextField()
