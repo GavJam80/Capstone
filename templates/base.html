@@ -90,11 +90,6 @@ and specific content in individual templates (generic.html and others).-->
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-                    {% if user.is_staff %}
-                    <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{% url 'admin:index' %}">Admin Panel</a>
-                    </li>
-                    {% endif %}
                 </ul>
                 {% if user.is_authenticated %}
                 <p class="text-end m-3 mb-0">You are logged in as {{ user.username }}</p>
