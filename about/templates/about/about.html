@@ -1,42 +1,48 @@
+<!-- The about page for the club, renders in Navbar as My Dojo -->
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
+<!-- Define the content block that will be inserted into the base template -->
 {% block content %}
 <div class="container mt-5">
     <div class="row">
+        <!-- First column: profile image -->
         <div class="col-12 col-md-4 text-center">
+            <!-- Check if the profile image URL contains "placeholder" -->
             {% if "placeholder" in about.profile_image.url %}
+            <!-- Display a placeholder image if the profile image is a placeholder -->
             <img src="{% static 'images/nobody.webp' %}" alt="placeholder image">
             {% else %}
+            <!-- Display the actual profile image -->
             <img src="{{ about.profile_image.url }}" alt="{{ about.title }}">
             {% endif %}
         </div>
+        <!-- Second column: title and content -->
         <div class="col-12 col-md-8">
+            <!-- Display the title of the about page -->
             <h2>{{ about.title }}</h2>
+            <!-- Display the content of the about page, marked as safe to allow HTML rendering -->
             {{ about.content | safe }}
         </div>
     </div>
     <div class="row">
+        <!-- Second row: updated on field -->
         <div class="col text-right">
-            <!-- Updated on field goes in here -->
-
+            <!-- Display the updated on date aligned to the right -->
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
     <div class="row justify-content-center">
+        <!-- Third row: invitation to join the club -->
         <div class="col-12 col-md-6 my-5">
+            <!-- Invitation title -->
             <h2 style="text-align: center;">Come Join Us!</h2>
+            <!-- Invitation content -->
             <p style="text-align: center;">We have a great club and thriving community, we are family oriented so bring the kids (or kids bring your
                 adults !!) Get in touch below for more information.</p>
-
-
-            <form method="post">
-                {{ collaborate_form | crispy }}
-                {% csrf_token %}
-                <button class="btn btn-secondary" type="submit">Submit</button>
-            </form>
         </div>
     </div>
 </div>
+<!-- End of content block -->
 {% endblock content %}

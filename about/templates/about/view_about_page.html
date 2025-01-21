@@ -1,7 +1,9 @@
 {% extends "base_generic.html" %}
-
 {% block content %}
+  <!-- Display the username's About Page title -->
   <h1>{{ about_page.user.username }}'s About Page</h1>
+  <!-- Display the content of the about page, marked as safe to allow HTML rendering -->
   <div>{{ about_page.content|safe }}</div>
+  <!-- Link to edit the about page -->
   <a href="{% url 'edit_about_page' %}">Edit About Page</a>
 {% endblock %}

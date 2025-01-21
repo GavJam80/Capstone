@@ -1,11 +1,17 @@
 {% extends "base_generic.html" %}
-
 {% block content %}
-  <h1>Create About Page</h1>
+  <!-- Page title -->
+  <h1>Create My Page</h1>
+  <!-- Form for creating the about page -->
   <form method="post">
+    <!-- CSRF token for security -->
     {% csrf_token %}
+    <!-- Include any media required by the form (e.g., JavaScript, CSS) -->
     {{ form.media }}
+    <!-- Render the form fields as paragraphs -->
     {{ form.as_p }}
+    <!-- Submit button to save the form -->
     <button type="submit">Save</button>
   </form>
+<!-- End of content block -->
 {% endblock %}

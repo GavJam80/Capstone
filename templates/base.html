@@ -1,3 +1,17 @@
+<!-- Having both generic.html and base_generic.html can serve different purposes in your project. Here is a typical use case for each:
+
+base_generic.html:
+
+This file usually serves as a base template that defines the overall structure of your web pages. It includes common elements like the header, 
+footer, navigation bar, and any other elements that are consistent across multiple pages.
+Other templates can extend base_generic.html to inherit this common structure and add their own specific content.
+generic.html:
+
+This file can be a specific template that extends base_generic.html and provides content for a particular type of page.
+It might be used for rendering a specific view or a set of views that share a common layout but have different content. 
+This approach promotes reusability and maintainability by allowing you to define common elements in one place (base_generic.html) 
+and specific content in individual templates (generic.html and others).-->
+
 {% load static %}
 {% url 'home' as home_url %}
 {% url 'about' as about_url %}
@@ -50,17 +64,22 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link {% if request.path == create_about_page_url %}active{% endif %}" aria-current="page"
                             href="{% url 'create_about_page' %}">Create About Page</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == view_about_page_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'view_about_page' username=request.user.username %}">View My About Page</a>
+                            href="{% url 'view_about_page' username=request.user.username %}">Update My About Page</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% if user.is_superuser %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/admin/">Admin Panel</a>
+                    </li>
+                    {% endif %}
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"

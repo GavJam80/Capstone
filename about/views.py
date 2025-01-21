@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .models import About, AboutPage
 from .forms import CollaborateForm, AboutPageForm
 
+# View function for the about me page
 def about_me(request):
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
@@ -15,6 +16,7 @@ def about_me(request):
     about = About.objects.all().order_by('-updated_on').first()
     collaborate_form = CollaborateForm()
 
+    # Render the about.html template with the about object and collaboration form
     return render(
         request,
         "about/about.html",
@@ -22,12 +24,14 @@ def about_me(request):
          "collaborate_form": collaborate_form},
     )
 
+# View function for creating an about page, requires login
 @login_required
 def create_about_page(request):
     # Check if the user already has an AboutPage
     if AboutPage.objects.filter(user=request.user).exists():
         return redirect('view_about_page', username=request.user.username)
     
+    # Handle POST request to submit the about page form
     if request.method == 'POST':
         form = AboutPageForm(request.POST)
         if form.is_valid():
@@ -39,6 +43,7 @@ def create_about_page(request):
         form = AboutPageForm()
     return render(request, 'about/create_about_page.html', {'form': form})
 
+# View function for viewing a user's about page, requires login
 @login_required
 def view_about_page(request, username):
     user = get_object_or_404(User, username=username)
@@ -49,6 +54,7 @@ def view_about_page(request, username):
         return redirect('create_about_page')
     return render(request, 'about/view_about_page.html', {'about_page': about_page})
 
+# View function for editing the current user's about page, requires login
 @login_required
 def edit_about_page(request):
     about_page = get_object_or_404(AboutPage, user=request.user)
