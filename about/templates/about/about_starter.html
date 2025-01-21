@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+
+<!-- Main container with a top margin -->
 <div class="container mt-5">
     <div class="row">
+        <!-- First column: centered image -->
         <div class="col-4 text-center">
+            <!-- Display an image from the static files directory -->
             <img src="{% static 'images/nobody.webp' %}" width="75%">
         </div>
+        <!-- Second column: title and content -->
         <div class="col-8">
             <!-- Title goes between these h2 tags -->
             <h2></h2>
@@ -13,10 +18,13 @@
         </div>
     </div>
     <div class="row">
+        <!-- Second row: updated on field -->
         <div class="col text-right">
-            <!-- Updated on field goes in here -->
+            <!-- Display the updated on date aligned to the right -->
             <p class="text-end"><em>Updated on: </em></p>
         </div>
-      </div>
+    </div>
 </div>
+
+<!-- End of content block -->
 {% endblock content %}

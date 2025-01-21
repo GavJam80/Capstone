@@ -1,12 +1,18 @@
 <!-- filepath: /workspace/Capstone/about/templates/about/edit_about_page.html -->
 {% extends "base_generic.html" %}
-
 {% block content %}
+  <!-- Page title -->
   <h1>Edit About Page</h1>
+  <!-- Form for editing the about page -->
   <form method="post">
+    <!-- CSRF token for security -->
     {% csrf_token %}
+    <!-- Include any media required by the form (e.g., JavaScript, CSS) -->
     {{ form.media }}
+    <!-- Render the form fields as paragraphs -->
     {{ form.as_p }}
+    <!-- Submit button to save the form -->
     <button type="submit">Save</button>
   </form>
+<!-- End of content block -->
 {% endblock %}
