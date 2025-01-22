@@ -147,7 +147,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# Media files (uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+SUMMERNOTE_CONFIG = {
+    'attachment_require_authentication': True,  # If you want to restrict access to authenticated users
+    'attachment_storage_class': 'django.core.files.storage.FileSystemStorage',  # Default storage class
+    'attachment_absolute_uri': False,  # Use absolute URI for attachments
+}
