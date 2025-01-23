@@ -4,114 +4,160 @@
 {% block content %}
 
 <!-- index.html content starts here -->
- <br><br>
-<div id="title-bar" class="container-fluid text-white py-3" style="background-color: #b81818;" >
-    <div class="container">
-        <h1 class="text-center">Welcome to my dojo!</h1>
-    </div>
+<br><br>
+<div id="title-bar" class="container-fluid text-white py-3" style="background-color: #b81818;">
+  <div class="container">
+    <h1 class="text-center">Welcome to my dojo! Here's whats happening:</h1>
+  </div>
 </div>
 <br><br>
 <div class="container-fluid">
-    <div class="row">
+  <div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/dkn7t5brn/image/upload/t_postholder/v1736866411/karate-silhouette-800px_qkf2uf.png"
-                                    alt="silhouette kicking">
-                                {% else %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/dkn7t5brn/image/upload/t_postholder/v1736866411/karate-silhouette-800px_qkf2uf.png"
-                                    alt="{{ post.title }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 left">
+      <div class="row">
+        {% for post in post_list %}
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="image-container">
+                {% if "placeholder" in post.featured_image.url %}
+                <img class="card-img-top"
+                  src="https://res.cloudinary.com/dkn7t5brn/image/upload/t_postholder/v1736866411/karate-silhouette-800px_qkf2uf.png"
+                  alt="silhouette kicking">
+                {% else %}
+                <img class="card-img-top"
+                  src="https://res.cloudinary.com/dkn7t5brn/image/upload/t_postholder/v1736866411/karate-silhouette-800px_qkf2uf.png"
+                  alt="{{ post.title }}">
                 {% endif %}
-                {% endfor %}
+                <div class="image-flash">
+                  <p class="author">Author: {{ post.author }}</p>
+                </div>
+              </div>
+              <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.excerpt }}</p>
+              </a>
 
+              <hr />
+              <p class="card-text text-muted h6">{{ post.created_on}}
+              </p>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- Check if the content is paginated -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
-            </li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li>
-                <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
-<br><br>
-<div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        {% if forloop.counter|divisibleby:3 %}
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          Accordion Item #2
-        </button>
-      </h2>
-      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-      </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          Accordion Item #3
-        </button>
-      </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+      <div class="row">
+        {% endif %}
+        {% endfor %}
+
       </div>
     </div>
   </div>
+  <!-- Check if the content is paginated -->
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+      </li>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</div>
+<br><br>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Why Martial Arts?
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body"></code> Martial arts offer a wide range of benefits that extend far beyond
+        self-defense.<br> They provide a comprehensive workout, improving cardiovascular health, strength, flexibility,
+        and
+        coordination. <br>The mental discipline required for mastering techniques enhances focus, concentration, and
+        problem-solving skills. <br>Moreover, martial arts instill valuable life lessons such as respect, self-control,
+        and
+        perseverance. <br>The supportive community within a martial arts school fosters a sense of belonging and
+        encourages
+        personal growth. <br>Whether it's for physical fitness, mental well-being, or personal development, martial arts
+        offer a rewarding path for individuals of all ages and backgrounds.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Why Our Dojo?
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">A family-oriented karate dojo provides a unique environment where families can train
+        together, fostering stronger bonds and shared experiences. Children learn discipline, respect, and
+        self-confidence while developing valuable life skills. Parents can stay active, improve their fitness, and
+        connect with other families in a supportive community. The dojo becomes more than just a place to learn martial
+        arts; it becomes an extension of the family unit, promoting healthy lifestyles and creating lasting memories for
+        everyone involved.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        What Should I Expect?
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">At a good karate dojo, you can expect a structured and disciplined environment focused
+        on both physical and mental development. Here's a breakdown of what to anticipate:<br><br>
+
+        <b>Fundamentals:</b><br><br>
+
+        <b>Warm-up:</b> Classes typically begin with a warm-up routine to increase blood flow, flexibility, and prepare the
+        body for training.<br><br>
+        <b>Basic Techniques:</b> Instruction covers fundamental karate techniques such as punches, kicks, blocks, and stances.
+        These are broken down and practiced repeatedly to ensure proper form and technique.<br><br>
+        <b>Kata:</b> Kata are choreographed patterns of movements that simulate combat scenarios. They help develop
+        coordination, timing, and memory.<br><br>
+        <b>Kihon:</b> Kihon refers to basic techniques practiced alone or with a partner. This repetitive practice helps refine
+        movements and build muscle memory.<br><br>
+        <b>Beyond Fundamentals:</b><br><br>
+
+        <b>Kumite:</b> Kumite is a controlled sparring session where students practice applying techniques against a resisting
+        opponent. It helps develop timing, distance management, and self-defense skills.<br><br>
+        <b>Self-Defense:</b> Many dojos incorporate self-defense techniques into their curriculum, teaching students how to
+        defend themselves against common attacks.<br><br>
+       <b>Fitness Training:</b> Some dojos may include fitness training components such as strength and conditioning exercises
+        to improve overall physical fitness.<br><br>
+        <b>Dojo Etiquette:</b><br><br>
+
+        <b>Respect:</b> Respect for the instructor, fellow students, and the training space is paramount. This includes bowing
+        upon entering and exiting the dojo, maintaining silence during instruction, and showing courtesy to others.<br><br>
+        <b>Discipline:</b> A good dojo fosters discipline and self-control. Students are expected to follow instructions,
+        control their emotions, and maintain focus during training.<br><br>
+        <b>Community:</b> A strong sense of community often exists within a good dojo. Students support each other, celebrate
+        successes, and learn from one another.
+      </div>
+    </div>
+  </div>
+</div>
 <br><br>
 <div class="map-container">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18872.73834688181!2d-3.033085515801672!3d53.75223965929508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b410f496bcd9b%3A0x17a7af049e911eed!2sLytham%20St%20Annes%2C%20Lytham%20Saint%20Annes!5e0!3m2!1sen!2suk!4v1737640058060!5m2!1sen!2suk"
-        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18872.73834688181!2d-3.033085515801672!3d53.75223965929508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b410f496bcd9b%3A0x17a7af049e911eed!2sLytham%20St%20Annes%2C%20Lytham%20Saint%20Annes!5e0!3m2!1sen!2suk!4v1737640058060!5m2!1sen!2suk"
+    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
 <!-- index.html content ends here -->
