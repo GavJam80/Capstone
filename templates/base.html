@@ -23,8 +23,9 @@ and specific content in individual templates (generic.html and others).-->
 <html class="h-100" lang="en">
 
 <head>
-    <title>Club Site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% block head_title %}Club Site{% endblock head_title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +40,12 @@ and specific content in individual templates (generic.html and others).-->
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    {% block extra_head %}{% endblock extra_head %}
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-
+    {% block body %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
@@ -156,6 +159,7 @@ and specific content in individual templates (generic.html and others).-->
 
     {% block extras %}
     {% endblock %}
+    {% endblock body %}
 </body>
 
 </html>

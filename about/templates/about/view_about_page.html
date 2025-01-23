@@ -5,5 +5,5 @@
   <!-- Display the content of the about page, marked as safe to allow HTML rendering -->
   <div>{{ about_page.content|safe }}</div>
   <!-- Link to edit the about page -->
-  <a href="{% url 'edit_about_page' %}">Edit About Page</a>
+  <a href="{% url 'edit_about_page' %}" class="edit-link">Edit About Page</a>
 {% endblock %}
