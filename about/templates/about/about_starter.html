@@ -6,22 +6,23 @@
 <div class="container mt-5">
     <div class="row">
         <!-- First column: centered image -->
-        <div class="col-4 text-center">
+        <div class="col-12 col-md-4 text-center">
             <!-- Display an image from the static files directory -->
-            <img src="{% static 'images/nobody.webp' %}" width="75%">
+            <img src="{% static 'images/nobody.webp' %}" width="75%" alt="Placeholder image">
         </div>
         <!-- Second column: title and content -->
-        <div class="col-8">
+        <div class="col-12 col-md-8">
             <!-- Title goes between these h2 tags -->
-            <h2></h2>
+            <h2>Your Title Here</h2>
             <!-- Content goes directly underneath this -->
+            <p>Your content goes here.</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-4">
         <!-- Second row: updated on field -->
         <div class="col text-right">
             <!-- Display the updated on date aligned to the right -->
-            <p class="text-end"><em>Updated on: </em></p>
+            <p class="text-end"><em>Updated on: [Date]</em></p>
         </div>
     </div>
 </div>
