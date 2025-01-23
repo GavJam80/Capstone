@@ -175,3 +175,16 @@ body {
     text-decoration: underline; /* Add underline on hover */
 }
 
+.map-container {
+    width: 100%; /* Make the container full width */
+    height: 400px; /* Set a minimum height for the map */
+    position: relative; /* For positioning the iframe absolutely */
+  }
+
+  .map-container iframe {
+    width: 100%; /* Make the iframe responsive */
+    height: 100%; /* Make the iframe fill the container */
+    position: absolute; /* Position the iframe absolutely within the container */
+    top: 0;
+    left: 0;
+  }
