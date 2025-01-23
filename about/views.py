@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import About, AboutPage
+from .models import About, AboutPage, CollaborateRequest
 from .forms import CollaborateForm, AboutPageForm
 
 # View function for the about me page
@@ -41,6 +41,7 @@ def create_about_page(request):
             return redirect('view_about_page', username=request.user.username)
     else:
         form = AboutPageForm()
+    
     return render(request, 'about/create_about_page.html', {'form': form})
 
 # View function for viewing a user's about page, requires login
@@ -66,3 +67,16 @@ def edit_about_page(request):
     else:
         form = AboutPageForm(instance=about_page)
     return render(request, 'about/edit_about_page.html', {'form': form})
+
+# View function for the about page with collaboration form
+def about_view(request):
+    about = get_object_or_404(About, user=request.user)
+    if request.method == 'POST':
+        form = CollaborateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success_page')  # Redirect to a success page
+    else:
+        form = CollaborateForm()
+    
+    return render(request, 'about/about.html', {'about': about, 'form': form})

@@ -8,14 +8,14 @@
 <div class="container mt-5">
     <div class="row">
         <!-- First column: profile image -->
-        <div class="col-12 col-md-4 text-center">
+        <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
             <!-- Check if the profile image URL contains "placeholder" -->
             {% if "placeholder" in about.profile_image.url %}
             <!-- Display a placeholder image if the profile image is a placeholder -->
-            <img src="{% static 'images/nobody.webp' %}" alt="placeholder image">
+            <img src="{% static 'images/nobody.webp' %}" alt="placeholder image" class="img-fluid">
             {% else %}
             <!-- Display the actual profile image -->
-            <img src="{{ about.profile_image.url }}" alt="{{ about.title }}">
+            <img src="{{ about.profile_image.url }}" alt="{{ about.title }}" class="img-fluid">
             {% endif %}
         </div>
         <!-- Second column: title and content -->
@@ -25,23 +25,25 @@
             {{ about.content | safe }}
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-4">
         <!-- Second row: updated on field -->
         <div class="col text-right">
             <!-- Display the updated on date aligned to the right -->
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <!-- Third row: invitation to join the club -->
-        <div class="col-12 col-md-6 my-5">
-            <!-- Invitation title -->
-            <h2 style="text-align: center;">Come Join Us!</h2>
-            <!-- Invitation content -->
-            <p style="text-align: center;">We have a great club and thriving community, we are family oriented so bring the kids (or kids bring your
-                adults !!) Get in touch below for more information.</p>
+    <!-- Collaboration Form -->
+    <div class="row mt-5 justify-content-center align-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <h2 class="text-center">Interested in joining us?</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ collaborate_form.as_p }}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<!-- End of content block -->
-{% endblock content %}
+{% endblock %}
