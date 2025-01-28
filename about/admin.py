@@ -30,4 +30,3 @@ class AboutPageAdmin(SummernoteModelAdmin):
     search_fields = ('user__username', 'content')
     # Specify which fields should use the Summernote editor
     summernote_fields = ('content',)
-    
