@@ -2,6 +2,7 @@ from django import forms
 from .models import CollaborateRequest, AboutPage
 from django_summernote.widgets import SummernoteWidget
 
+
 # Define a form class for users to request response for more info
 class CollaborateForm(forms.ModelForm):
     """

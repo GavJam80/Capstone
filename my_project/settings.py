@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost:8000", "localhost", ".herokuapp.com",]
+ALLOWED_HOSTS = ["localhost:8000", "localhost", ".herokuapp.com", ]
 
 
 # Application definition
@@ -95,8 +95,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
-
-
 
 
 DATABASES = {

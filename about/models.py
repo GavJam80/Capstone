@@ -3,7 +3,6 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
-
 # Site About me page, appears as my dojo in navbar
 class About(models.Model):
     title = models.CharField(max_length=200)
@@ -24,7 +23,7 @@ class CollaborateRequest(models.Model):
 
     def __str__(self):
         return f"Collaboration request from {self.name}"
-    
+
 
 # User About me page, appears as my dojo in navbar
 class AboutPage(models.Model):
